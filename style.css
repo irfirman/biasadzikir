@@ -1,0 +1,34 @@
+/* Mengatur tampilan dasar untuk halaman */
+body {
+  font-family: Arial, sans-serif; /* Font yang digunakan di seluruh halaman */
+  display: flex; /* Menggunakan Flexbox untuk perataan konten */
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  align-items: center; /* Memusatkan konten secara vertikal */
+  height: 100vh; /* Menjadikan tinggi halaman sebesar layar */
+  margin: 0; /* Menghilangkan margin default browser */
+  background-color: #f0f0f0; /* Memberikan warna latar belakang abu-abu terang */
+}
+
+/* Mengatur tampilan kontainer utama */
+.container {
+  text-align: center; /* Teks dalam kontainer diatur ke tengah */
+}
+
+/* Styling untuk tampilan hitungan angka */
+#display {
+  font-size: 3rem; /* Ukuran font besar agar angka hitungan mudah dilihat */
+  margin-bottom: 20px; /* Jarak antara angka hitungan dan tombol */
+}
+
+/* Styling untuk tombol */
+.buttons button {
+  font-size: 1.5rem; /* Ukuran font tombol */
+  padding: 10px 20px; /* Memberikan ruang di dalam tombol agar lebih nyaman diklik */
+  margin: 10px; /* Memberikan jarak antar tombol */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+}
+
+/* Efek hover pada tombol */
+.buttons button:hover {
+  background-color: #ddd; /* Mengubah warna latar belakang tombol saat di-hover */
+}
