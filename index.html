@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- Mengatur karakter encoding agar mendukung berbagai karakter -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mengatur tampilan agar responsif di mobile -->
-  <title>Web Counting App</title> <!-- Judul halaman -->
-  <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS eksternal untuk styling -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Counting App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Counting App</h1> <!-- Judul aplikasi -->
+    <h1>Counting App</h1>
     
-    <!-- Elemen yang akan menampilkan angka hitungan -->
+    <!-- Dropdown untuk memilih kategori -->
+    <select id="categorySelect" onchange="updateCategory()">
+      <option value="default">Select Category</option>
+      <option value="category1">Category 1</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+    </select>
+    
+    <!-- Elemen untuk menampilkan hitungan -->
     <div id="display">0</div>
     
     <!-- Tombol untuk menambah dan mengurangi hitungan -->
     <div class="buttons">
-      <button onclick="increment()">Count</button> <!-- Tombol untuk menambah hitungan, menggunakan fungsi JavaScript 'increment' -->
-      <button onclick="decrement()">Back</button> <!-- Tombol untuk mengurangi hitungan, menggunakan fungsi JavaScript 'decrement' -->
+      <button onclick="increment()">Count</button>
+      <button onclick="decrement()">Back</button>
     </div>
   </div>
 
-  <!-- Menghubungkan file JavaScript untuk logika interaksi -->
   <script src="app.js"></script>
 </body>
 </html>
