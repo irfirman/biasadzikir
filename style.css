@@ -23,39 +23,36 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Gaya untuk elemen tampilan angka (display) */
-#display {
-  font-size: 4rem;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%;
-  max-width: 300px;
-  text-align: center;
-  border-radius: 10px;
-  background-color: #e0e0e0;
-  color: #333;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 /* Gaya untuk tombol-tombol (Count, Back, Reset) */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  align-items: center;
 }
 
 .buttons button {
   font-size: 1.5rem;
   padding: 15px 20px;
-  width: 100px;
   border: none;
   background-color: #4CAF50;
   color: white;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+/* Tombol Count lebih besar */
+.buttons button:nth-child(1) {
+  flex: 2; /* Membuat tombol Count dua kali lebih besar dari yang lain */
+  padding: 20px 40px;
+}
+
+/* Tombol Back dan Reset lebih kecil */
+.buttons button:nth-child(2), .buttons button:nth-child(3) {
+  flex: 1;
+  padding: 15px 20px;
 }
 
 /* Gaya ketika tombol di-hover */
