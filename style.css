@@ -1,41 +1,118 @@
-/* Mengatur tampilan dasar untuk halaman */
+/* Mengatur tampilan dasar untuk kontainer aplikasi */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
 }
 
-/* Mengatur tampilan kontainer utama */
 .container {
   text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Styling untuk dropdown kategori */
-#categorySelect {
-  font-size: 1rem;
-  padding: 10px;
+h1 {
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 20px;
 }
 
-/* Styling untuk tampilan hitungan angka */
+/* Gaya untuk elemen tampilan angka (display) */
 #display {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 4rem;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling untuk tombol */
+/* Gaya untuk tombol-tombol (Count, Back, Reset) */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .buttons button {
   font-size: 1.5rem;
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 15px 20px;
+  width: 100px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Efek hover pada tombol */
+/* Gaya ketika tombol di-hover */
 .buttons button:hover {
-  background-color: #ddd;
+  background-color: #45a049;
+}
+
+/* Gaya untuk dropdown kategori */
+#categorySelect {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+/* Gaya untuk kontrol suara */
+.sound-control {
+  margin-top: 20px;
+}
+
+.sound-control button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sound-control button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries untuk Mobile */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #display {
+    font-size: 3rem;
+    padding: 10px;
+  }
+
+  .buttons button {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 80px;
+  }
+
+  #categorySelect {
+    width: 90%;
+  }
 }
