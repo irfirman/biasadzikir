@@ -1,64 +1,57 @@
-// Pengaturan awal
-let counts = {
-  category1: 0,
-  category2: 0,
-  category3: 0
-};
-let currentCategory = "category1";
-let soundEnabled = false;
+// Variabel Global
+let count = 0;
+let isSoundEnabled = true; // Kontrol suara aktif/nonaktif
 
-/* Fungsi untuk memperbarui kategori */
-function updateCategory() {
-  const selectElement = document.getElementById("categorySelect");
-  currentCategory = selectElement.value;
-  updateDisplay();
-}
+// Elemen HTML
+const display = document.getElementById('display');
+const categorySelect = document.getElementById('categorySelect');
+const soundToggleButton = document.getElementById('soundToggleButton');
+const countButton = document.getElementById('countButton');
+const backButton = document.getElementById('backButton');
+const resetButton = document.getElementById('resetButton');
 
-/* Fungsi untuk memperbarui tampilan hitungan */
+// File Suara (pastikan file audionya sudah diunggah ke repository GitHub)
+const audio = new Audio('click-sound.mp3');
+
+// Fungsi Menampilkan Count
 function updateDisplay() {
-  document.getElementById("display").textContent = counts[currentCategory];
+  display.textContent = count;
 }
 
-/* Fungsi untuk menambah hitungan */
-function increment() {
-  counts[currentCategory]++; // Menambah hitungan untuk kategori yang dipilih
-  updateDisplay(); // Memperbarui tampilan angka
-
-  // Jika fitur suara diaktifkan, buat instance baru audio dan putar
-  if (soundEnabled) {
-    const sound = new Audio('count-sound.mp3');
-    sound.play();
-  }
-
-  // Jika perangkat mendukung vibrasi, maka ponsel akan bergetar
-  if (navigator.vibrate) {
-    navigator.vibrate(100); // Bergetar selama 100ms
-  }
-}
-
-/* Fungsi untuk mengurangi hitungan */
-function decrement() {
-  if (counts[currentCategory] > 0) { // Memastikan nilai hitungan tidak kurang dari 0
-    counts[currentCategory]--; // Mengurangi hitungan untuk kategori yang dipilih
-    updateDisplay(); // Memperbarui tampilan angka
-
-    // Jika fitur suara diaktifkan, buat instance baru audio dan putar
-    if (soundEnabled) {
-      const backSound = new Audio('back-sound.mp3');
-      backSound.play();
-    }
-  }
-}
-
-/* Fungsi untuk mereset hitungan */
-function resetCount() {
-  counts[currentCategory] = 0;
+// Fungsi Menambah Count
+countButton.addEventListener('click', () => {
+  count++;
   updateDisplay();
+  playSound(); // Mainkan suara setiap kali tombol Count ditekan
+});
+
+// Fungsi Mengurangi Count
+backButton.addEventListener('click', () => {
+  if (count > 0) {
+    count--;
+    updateDisplay();
+  }
+});
+
+// Fungsi Reset Count
+resetButton.addEventListener('click', () => {
+  count = 0;
+  updateDisplay();
+});
+
+// Fungsi Toggle Suara
+soundToggleButton.addEventListener('click', () => {
+  isSoundEnabled = !isSoundEnabled;
+  soundToggleButton.textContent = isSoundEnabled ? 'Sound ON' : 'Sound OFF';
+});
+
+// Fungsi Memutar Suara
+function playSound() {
+  if (isSoundEnabled) {
+    audio.currentTime = 0; // Set audio ke awal untuk menghindari delay
+    audio.play();
+  }
 }
 
-/* Fungsi untuk mengaktifkan/menonaktifkan suara */
-function toggleSound() {
-  soundEnabled = !soundEnabled; // Mengubah status suara
-  const button = document.getElementById("soundToggle");
-  button.textContent = soundEnabled ? "Disable Sound" : "Enable Sound"; // Memperbarui teks tombol
-}
+// Update tampilan pertama kali aplikasi berjalan
+updateDisplay();
