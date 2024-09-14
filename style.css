@@ -53,7 +53,7 @@ h1 {
   text-align-last: center; /* Memastikan teks di dalam select berada di tengah */
 }
 
-/* Gaya untuk tombol-tombol (Count, Back, Reset) */
+/* Gaya untuk tombol-tombol (Back, Count, Reset) */
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -62,22 +62,7 @@ h1 {
   margin-top: 20px;
 }
 
-/* Gaya untuk tombol Count (tengah) */
-#countButton {
-  flex-grow: 2;
-  font-size: 1.5rem;
-  padding: 20px 40px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 0 auto; /* Tombol count berada di tengah */
-  display: block;
-}
-
-/* Tombol Back dan Reset lebih kecil */
+/* Tombol Back dan Reset */
 .buttons button {
   font-size: 1.2rem;
   padding: 15px 20px;
@@ -88,6 +73,21 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+/* Tombol Count lebih besar */
+#countButton {
+  flex-grow: 2;
+  font-size: 1.5rem;
+  padding: 20px 40px; /* Ukuran lebih besar untuk tombol Count */
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Gaya ketika tombol di-hover */
