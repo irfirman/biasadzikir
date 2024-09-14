@@ -23,6 +23,36 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Gaya untuk elemen tampilan angka (display) */
+#display {
+  font-size: 4rem;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk dropdown kategori */
+#categorySelect {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align-last: center; /* Memastikan teks di dalam select berada di tengah */
+}
+
 /* Gaya untuk tombol-tombol (Count, Back, Reset) */
 .buttons {
   display: flex;
@@ -45,8 +75,9 @@ h1 {
 
 /* Tombol Count lebih besar */
 .buttons button:nth-child(1) {
-  flex: 2; /* Membuat tombol Count dua kali lebih besar dari yang lain */
-  padding: 20px 40px;
+  flex: 2; /* Tombol Count lebih besar */
+  padding: 20px 40px; /* Ukuran padding lebih besar untuk Count */
+  background-color: #3e8e41; /* Warna hijau yang sedikit berbeda */
 }
 
 /* Tombol Back dan Reset lebih kecil */
@@ -60,19 +91,13 @@ h1 {
   background-color: #45a049;
 }
 
-/* Gaya untuk dropdown kategori */
-#categorySelect {
-  font-size: 1.2rem;
-  padding: 10px;
-  margin: 10px 0 20px 0;
-  width: 80%;
-  max-width: 300px;
-  border-radius: 5px;
-  border: 1px solid #333;
-  display: block; /* Pastikan elemen select ditampilkan sebagai blok */
-  margin-left: auto; /* Memposisikan elemen select di tengah */
-  margin-right: auto; /* Memposisikan elemen select di tengah */
-  text-align-last: center; /* Memastikan teks di dalam select juga berada di tengah */
+/* Gaya untuk tombol reset (memiliki warna berbeda) */
+.buttons button:nth-child(3) {
+  background-color: #f44336;
+}
+
+.buttons button:nth-child(3):hover {
+  background-color: #e53935;
 }
 
 /* Gaya untuk kontrol suara */
@@ -110,7 +135,17 @@ h1 {
   .buttons button {
     font-size: 1.2rem;
     padding: 10px;
-    width: 80px;
+  }
+
+  /* Tombol Count tetap lebih besar di tampilan mobile */
+  .buttons button:nth-child(1) {
+    flex: 2;
+    padding: 15px 30px;
+  }
+
+  .buttons button:nth-child(2), .buttons button:nth-child(3) {
+    flex: 1;
+    padding: 10px 15px;
   }
 
   #categorySelect {
