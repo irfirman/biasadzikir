@@ -1,5 +1,11 @@
-// Variabel Global
-let count = 0;
+// Variabel Global untuk menghitung masing-masing kategori
+let counts = {
+  tasbih: 0,
+  tahmid: 0,
+  takbir: 0,
+  tahlil: 0
+};
+
 let isSoundEnabled = true; // Kontrol suara aktif/nonaktif
 
 // Elemen HTML
@@ -13,29 +19,33 @@ const resetButton = document.getElementById('resetButton');
 // File Suara (pastikan file audionya sudah diunggah ke repository GitHub)
 const audio = new Audio('click-sound.mp3');
 
-// Fungsi Menampilkan Count
+// Fungsi Menampilkan Count berdasarkan kategori yang dipilih
 function updateDisplay() {
-  display.textContent = count;
+  const selectedCategory = categorySelect.value;
+  display.textContent = counts[selectedCategory];
 }
 
 // Fungsi Menambah Count
 countButton.addEventListener('click', () => {
-  count++;
+  const selectedCategory = categorySelect.value;
+  counts[selectedCategory]++;
   updateDisplay();
   playSound(); // Mainkan suara setiap kali tombol Count ditekan
 });
 
 // Fungsi Mengurangi Count
 backButton.addEventListener('click', () => {
-  if (count > 0) {
-    count--;
+  const selectedCategory = categorySelect.value;
+  if (counts[selectedCategory] > 0) {
+    counts[selectedCategory]--;
     updateDisplay();
   }
 });
 
 // Fungsi Reset Count
 resetButton.addEventListener('click', () => {
-  count = 0;
+  const selectedCategory = categorySelect.value;
+  counts[selectedCategory] = 0;
   updateDisplay();
 });
 
@@ -52,6 +62,9 @@ function playSound() {
     audio.play();
   }
 }
+
+// Update tampilan setiap kali kategori berubah
+categorySelect.addEventListener('change', updateDisplay);
 
 // Update tampilan pertama kali aplikasi berjalan
 updateDisplay();
