@@ -72,6 +72,10 @@ h1 {
   max-width: 300px;
   border-radius: 5px;
   border: 1px solid #333;
+  display: block; /* Pastikan elemen select ditampilkan sebagai blok */
+  margin-left: auto; /* Memposisikan elemen select di tengah */
+  margin-right: auto; /* Memposisikan elemen select di tengah */
+  text-align-last: center; /* Memastikan teks di dalam select juga berada di tengah */
 }
 
 /* Gaya untuk kontrol suara */
