@@ -50,7 +50,7 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  text-align-last: center; /* Memastikan teks di dalam select berada di tengah */
+  text-align-last: center;
 }
 
 /* Gaya untuk tombol-tombol (Back, Count, Reset) */
@@ -79,7 +79,7 @@ h1 {
 #countButton {
   flex-grow: 2;
   font-size: 1.5rem;
-  padding: 20px 40px; /* Ukuran lebih besar untuk tombol Count */
+  padding: 20px 40px;
   border: none;
   background-color: #4CAF50;
   color: white;
