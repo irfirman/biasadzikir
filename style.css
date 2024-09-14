@@ -56,15 +56,32 @@ h1 {
 /* Gaya untuk tombol-tombol (Count, Back, Reset) */
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
   margin-top: 20px;
-  align-items: center;
 }
 
-.buttons button {
+/* Gaya untuk tombol Count (tengah) */
+#countButton {
+  flex-grow: 2;
   font-size: 1.5rem;
+  padding: 20px 40px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto; /* Tombol count berada di tengah */
+  display: block;
+}
+
+/* Tombol Back dan Reset lebih kecil */
+.buttons button {
+  font-size: 1.2rem;
   padding: 15px 20px;
+  flex-grow: 1;
   border: none;
   background-color: #4CAF50;
   color: white;
@@ -73,30 +90,17 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-/* Tombol Count lebih besar */
-.buttons button:nth-child(1) {
-  flex: 2; /* Tombol Count lebih besar */
-  padding: 20px 40px; /* Ukuran padding lebih besar untuk Count */
-  background-color: #3e8e41; /* Warna hijau yang sedikit berbeda */
-}
-
-/* Tombol Back dan Reset lebih kecil */
-.buttons button:nth-child(2), .buttons button:nth-child(3) {
-  flex: 1;
-  padding: 15px 20px;
-}
-
 /* Gaya ketika tombol di-hover */
 .buttons button:hover {
   background-color: #45a049;
 }
 
 /* Gaya untuk tombol reset (memiliki warna berbeda) */
-.buttons button:nth-child(3) {
+#resetButton {
   background-color: #f44336;
 }
 
-.buttons button:nth-child(3):hover {
+#resetButton:hover {
   background-color: #e53935;
 }
 
@@ -138,17 +142,7 @@ h1 {
   }
 
   /* Tombol Count tetap lebih besar di tampilan mobile */
-  .buttons button:nth-child(1) {
-    flex: 2;
+  #countButton {
     padding: 15px 30px;
-  }
-
-  .buttons button:nth-child(2), .buttons button:nth-child(3) {
-    flex: 1;
-    padding: 10px 15px;
-  }
-
-  #categorySelect {
-    width: 90%;
   }
 }
